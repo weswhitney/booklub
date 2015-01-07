@@ -10,6 +10,11 @@
   <header>
     <div class="navigate-bar">
       <h1>booKlub</h1>
+      <p>
+        <% if current_user %>
+        <%= current_user.first_name %>
+        <% end %>
+      </p>
     </div>
   </header>
   <main>
