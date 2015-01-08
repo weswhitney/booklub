@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root 'pages#index'
   resources :sessions, only: [:create]
+  resources :users, only: [:create]
 
   get '/auth/:provider/callback', to: 'sessions#twitter_authenticate'
 

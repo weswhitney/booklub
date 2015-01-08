@@ -1,9 +1,23 @@
 <h1>booKlub</h1>
 
-<%= form_tag(sessions_path, method: "post") do %>
-<%= label_tag(:email, "email") %>
-<%= text_field_tag(:email) %>
-<%= label_tag(:password, "password") %>
-<%= password_field_tag(:password) %>
-<%= submit_tag "Login" %>
-<% end %>
+<div class="user-form">
+  <%= form_tag(sessions_path, method: "post") do %>
+  <%= label_tag(:email, "email") %>
+  <%= text_field_tag(:email) %>
+  <%= label_tag(:password, "password") %>
+  <%= password_field_tag(:password) %>
+  <%= submit_tag "Login" %>
+  <% end %>
+</div>
+
+<div class="signup-form">
+  <%= form_for @user, html: {class: "signup-form"} do |f| %>
+  <%= f.label :username, " choose username" %>
+  <%= f.text_field :username %>
+  <%= f.label :email, "enter your email" %>
+  <%= f.text_field :email %>
+  <%= f.label :password, " create password" %>
+  <%= f.password_field :password %>
+  <%= f.submit "join" %>
+  <% end %>
+</div>
