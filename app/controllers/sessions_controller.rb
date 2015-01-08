@@ -11,6 +11,11 @@ class SessionsController < ApplicationController
       end
     end
 
+    def log_out
+      session.clear
+      redirect_to root_path, notice: "you have successfully loged out"
+    end
+
     def twitter_authenticate
       # @user = User.find_or_create_from_auth_hash(auth_hash)
       # self.current_user = @user

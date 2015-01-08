@@ -12,14 +12,19 @@
       <h1>booKlub</h1>
       <p>
         <% if current_user != nil %>
-          <%= current_user.username %>
+        <%= current_user.username %>
+        <%= link_to "Log out", log_out_path, method: "delete" %>
         <% else %>
-          NO USER LOGGED IN
+        NO USER LOGGED IN
         <% end %>
       </p>
     </div>
   </header>
   <main>
+    <% if notice != nil %>
+      <h2><%= notice %></h2>
+    <% end %>
+    <%= yield %>
 
   </main>
   <footer>
@@ -28,7 +33,6 @@
     </div>
   </footer>
 
-  <%= yield %>
 
 </body>
 </html>
