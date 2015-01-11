@@ -1,27 +1,3 @@
-<h1>booKlub</h1>
-
+<!-- login index page with twitter auth.  might add instagram. -->
 <a href="/auth/twitter">connect with twitter</a>
-<a href="/auth/instagram">connect with instagram</a>
-
-<div class="user-form">
-  <%= form_tag(sessions_path, method: "post") do %>
-  <%= label_tag(:email, "email") %>
-  <%= text_field_tag(:email) %>
-  <%= label_tag(:password, "password") %>
-  <%= password_field_tag(:password) %>
-  <%= submit_tag "Login" %>
-  <% end %>
-</div>
-
-
-<div class="signup-form">
-  <%= form_for @user do |f| %>
-  <%= f.label :username, " choose username" %>
-  <%= f.text_field :username %>
-  <%= f.label :email, "email" %>
-  <%= f.text_field :email %>
-  <%= f.label :password, " create password" %>
-  <%= f.password_field :password %>
-  <%= f.submit "join" %>
-  <% end %>
-</div>
+<!-- <a href="/auth/instagram">connect with instagram</a> -->
