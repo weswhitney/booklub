@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: [:create]
   resources :dashboards
   resources :bookclubs
+  resources :books
 
   get '/auth/:provider/callback', to: 'sessions#create'
 end

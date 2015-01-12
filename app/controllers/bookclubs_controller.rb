@@ -31,7 +31,7 @@ class BookclubsController < ApplicationController
   def destroy
     @bookclub = Bookclub.find(params[:id])
     @bookclub.destroy
-    redirect_to bookclubs_path, notice: 'Bookclub was successfully deleted'
+    redirect_to dashboard_path(:id), notice: 'Bookclub was successfully deleted'
   end
 
 end
