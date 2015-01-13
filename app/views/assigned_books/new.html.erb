@@ -1,0 +1,11 @@
+<%= @bookclub.name %>
+
+<%= form_for [@bookclub, @assigned_book] do |f| %>
+<%= f.collection_select(
+:book_id,
+Book.all,
+:id,
+:title,
+) %>
+<%= f.submit "Assign Book to Book Club" %>
+<% end %>
