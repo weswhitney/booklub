@@ -6,7 +6,10 @@ class AssignedBooksController < ApplicationController
   end
 
   def create
-    @assigned_book = AssignedBook.new(params.require(:assigned_book).permit(:book_id))
+    @assigned_book = AssignedBook.new(
+      params.require(:assigned_book).permit(:book_id)
+    )
+    @assigned_book.bookclub_id = params[:bookclub_id]
     @assigned_book.save
     redirect_to bookclub_path(params[:bookclub_id])
   end

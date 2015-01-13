@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem "omniauth-google-oauth2"
+gem 'faraday', '~> 0.9.1'
 gem 'rails', '4.1.8'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.3'

@@ -1,7 +1,36 @@
-show page
+<p>
+  show page
+</p>
 
-<%= @bookclub.name %>
+<p>
+  <%= @bookclub.name %>
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>
+        Title
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @bookclub.assigned_books.each do |assigned_book| %>
+    <tr>
+      <td>
+        <%= assigned_book.book.title %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p>
+
 <%= link_to "Assign New Book to Bookclub", new_bookclub_assigned_book_path(@bookclub) %>
-book
+|
 <%= link_to "Edit", edit_bookclub_path(@bookclub) %>
+|
 <%= link_to "Delete", @bookclub, method: :delete %>
+
+</p>
