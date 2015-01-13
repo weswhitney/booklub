@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   delete "/log_out", to: "sessions#log_out"
   resources :users, only: [:create]
   resources :dashboards
-  resources :bookclubs
+  resources :bookclubs do
+    resources :assigned_books
+  end
   resources :books
 
   get '/auth/:provider/callback', to: 'sessions#create'

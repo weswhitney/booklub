@@ -1,7 +1,7 @@
 show page
 
 <%= @bookclub.name %>
-<%#= @bookclub.assigned_book %>
+<%= link_to "Assign New Book to Bookclub", new_bookclub_assigned_book_path(@bookclub) %>
 book
 <%= link_to "Edit", edit_bookclub_path(@bookclub) %>
 <%= link_to "Delete", @bookclub, method: :delete %>
