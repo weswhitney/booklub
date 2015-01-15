@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :bookclubs do
     resources :assigned_books
   end
-  resources :books
 
   get '/auth/:provider/callback', to: 'sessions#create'
+  get '/books/search', to: 'books#search'
 end

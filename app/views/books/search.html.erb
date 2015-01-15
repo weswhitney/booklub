@@ -1,0 +1,14 @@
+<%= form_tag books_search_path, method: "get" do %>
+  <%= text_field_tag :q %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+
+<% JSON.parse(@result.response.body)["items"].each do |data| %>
+  <%= data %>
+  <br>
+  <br>
+<% end %>
+
+<!-- <%= @result.data %> -->
+<!-- <%= @result.data.kind %> -->
