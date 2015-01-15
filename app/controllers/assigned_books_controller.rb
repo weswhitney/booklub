@@ -13,5 +13,4 @@ class AssignedBooksController < ApplicationController
     @assigned_book.save
     redirect_to bookclub_path(params[:bookclub_id])
   end
-
 end

@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   end
 
   get '/auth/:provider/callback', to: 'sessions#create'
-  get '/books/search', to: 'books#search'
+  get '/bookclubs/:bookclub_id/books/search', to: 'books#search', as: :books_search
 end

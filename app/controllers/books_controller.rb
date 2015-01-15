@@ -25,10 +25,12 @@ class BooksController < ApplicationController
     )
     client.authorization.fetch_access_token!
 
-    @result = client.execute(
+    result = client.execute(
     :api_method => books.volumes.list,
     :parameters => {'q' => params[:q], 'maxResults' => 5}
     )
+
+    @books_hash = JSON.parse(result.response.body)["items"]
   end
 
   def show
