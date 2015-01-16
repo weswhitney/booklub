@@ -27,7 +27,7 @@ class BooksController < ApplicationController
 
     result = client.execute(
     :api_method => books.volumes.list,
-    :parameters => {'q' => params[:q], 'maxResults' => 5}
+    :parameters => {'q' => params[:q], 'maxResults' => 1}
     )
 
     @books_hash = JSON.parse(result.response.body)["items"]

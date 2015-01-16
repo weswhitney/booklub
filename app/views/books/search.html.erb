@@ -7,13 +7,14 @@
   Please enter search
 <% else %>
   <% @books_hash.each do |data| %>
-    <h1><%= data['volumeInfo']['title'] %></h1>
-    <h1><%= data['volumeInfo']['authors'].try(:join, (', ')) %></h1>
-    <h4><%= data['volumeInfo']['description'] %></h4>
-    <% if data['volumeInfo'] != nil || data['imageLinks'] != nil || data['smallThumbnail'] != nil %>
-    NO IMAGE
-    <% else %>
-    <img src="<%= data['volumeInfo']['imageLinks']['smallThumbnail'] %>"/>
-    <% end %>
+      <h1><%= data['volumeInfo']['title'] %></h1>
+      <h1><%= data['volumeInfo']['authors'].try(:join, (', ')) %></h1>
+      <h4><%= data['volumeInfo']['description'] %></h4>
+    <% if data['volumeInfo']['imageLinks'] != nil %>
+      <img src="<%= data['volumeInfo']['imageLinks']['smallThumbnail'] %>"/>
   <% end %>
+
+    <!-- Form that submits to assigned_books#create with
+        hidden fields for title, author -->
+    <% end %>
 <% end %>
