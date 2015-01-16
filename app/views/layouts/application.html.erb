@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html>
+<!-- /////////////////////////////////////////////// -->
+<!-- /                                             / -->
+<!-- /                                             / -->
+<!-- /         https://github.com/weswhitney       / -->
+<!-- /                                             / -->
+<!-- /                                             / -->
+<!-- /////////////////////////////////////////////// -->
 <head>
   <title>booKlub</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -7,22 +14,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header>
-    <div class="navigate-bar">
-      <h1>booKlub</h1>
-      <p>
-        <% if current_user != nil %>
-        <%= current_user.username %>
-        <%= link_to "Sign out of booklub", log_out_path, method: "delete" %>
-        <% else %>
-        NO USER LOGGED IN
-        <% end %>
-      </p>
+    <div class="navigate-bar nav-fixed">
+      <% if current_user != nil %>
+      <%= current_user.username %>
+      <%= link_to "Sign out of booklub", log_out_path, method: "delete" %>
+      <% else %>
+      NO USER LOGGED IN
+      <% end %>
     </div>
+  <header>
+    <h1></h1>
   </header>
   <main>
     <% if notice != nil %>
-      <h2><%= notice %></h2>
+    <h2><%= notice %></h2>
     <% end %>
     <%= yield %>
 
