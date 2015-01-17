@@ -14,16 +14,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <div class="navigate-bar nav-fixed">
+    <div class="navigate-bar nav-fixed nav-border">
       <% if current_user != nil %>
-      <%= current_user.username %>
-      <%= link_to "Sign out of booklub", log_out_path, method: "delete" %>
+      <div class="current-user">
+        <%= current_user.username %>
+      </div>
       <% else %>
+      <%= link_to "Sign out of booklub", log_out_path, method: "delete" %>
       NO USER LOGGED IN
       <% end %>
     </div>
-  <header>
-    <h1></h1>
+  <header class="nav-junior">
+    <span class="auth-links">
+      <a href="/auth/twitter">connect with twitter</a>
+      <a href="/auth/google_oauth2">connect with google</a>
+    </span>
   </header>
   <main>
     <% if notice != nil %>

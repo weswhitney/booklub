@@ -1,20 +1,42 @@
 <%= form_tag books_search_path, method: "get" do %>
-  <%= text_field_tag :q %>
-  <%= submit_tag "Search" %>
+
+  <%= text_field_tag(:q, nil, class: "search-field") %>
+  <%= submit_tag "Search", class: "search-field" %>
+  <br>
+  <br>
+  <br>
 <% end %>
 
 <% if @books_hash == nil %>
   Please enter search
+  <br>
+  <br>
+  <br>
 <% else %>
   <% @books_hash.each do |data| %>
-      <h1><%= data['volumeInfo']['title'] %></h1>
-      <h1><%= data['volumeInfo']['authors'].try(:join, (', ')) %></h1>
-      <h4><%= data['volumeInfo']['description'] %></h4>
+    <h1><%= data['volumeInfo']['title'] %></h1>
+    <br>
+    <br>
+    <h1><%= data['volumeInfo']['authors'].try(:join, (', ')) %></h1>
+    <br>
+    <br>
+    <div class="description-box">
+      <p>
+        <%= data['volumeInfo']['description'] %>
+      </p>
+    </div>
+    <br>
+    <br>
+    <br>
     <% if data['volumeInfo']['imageLinks'] != nil %>
       <img src="<%= data['volumeInfo']['imageLinks']['smallThumbnail'] %>"/>
-  <% end %>
-
-    <!-- Form that submits to assigned_books#create with
-        hidden fields for title, author -->
     <% end %>
+
+    <%= form_tag bookclub_assigned_books_path do %>
+      <%= hidden_field_tag :title, data['volumeInfo']['title'] %>
+      <%= hidden_field_tag :author, data['volumeInfo']['author'] %>
+      <%= submit_tag "Add as Assigned Reading", class: "search-field" %>
+    <% end %>
+
+  <% end %>
 <% end %>
