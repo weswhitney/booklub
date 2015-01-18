@@ -3,7 +3,7 @@
 <!-- /////////////////////////////////////////////// -->
 <!-- /                                             / -->
 <!-- /                                             / -->
-<!-- /         https://github.com/weswhitney       / -->
+<!-- /                 @wes_whitney                / -->
 <!-- /                                             / -->
 <!-- /                                             / -->
 <!-- /////////////////////////////////////////////// -->
@@ -31,11 +31,14 @@
     </span>
   </header>
   <main>
+    <div class="container">
+
     <% if notice != nil %>
     <h2><%= notice %></h2>
     <% end %>
     <%= yield %>
 
+    </div>
   </main>
   <footer>
     <div class="fatty-footer">
