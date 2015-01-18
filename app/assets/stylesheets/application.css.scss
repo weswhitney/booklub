@@ -2,15 +2,17 @@
 
 
 body {
+  background: rgba(3,22,52,1);
+}
+
+.container {
   background: image-url('catcher_in_the_rye.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   padding-top: 54px;
   padding-bottom: 134px;
-  height: 100%;
-}
+  height: 9001px;
 
-.container {
   margin-left: 184px;
   margin-right: 184px;
 }
@@ -18,6 +20,7 @@ body {
 .nav-junior {
   background: rgba(3,101,100, 1);
   height: 50px;
+  margin-top: 56px;
 }
 
 *, *:after, *:before {
@@ -58,6 +61,18 @@ body {
 
 .nav-border {
   border-bottom: 2px solid rgba(232,221,203, 1);
+}
+
+.sign {
+  margin: 8px;
+  margin-left: 37%;
+  margin-right: 37%;
+  padding: 2px;
+  font-size: 37px;
+}
+
+.sign-out {
+  float: right;
 }
 
 .fatty-footer {
