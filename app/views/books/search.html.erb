@@ -7,8 +7,8 @@
   Please enter search
 <% else %>
   <% @books_hash.each do |data| %>
-    <h1><%= data['volumeInfo']['title'] %></h1>
-    <h1><%= data['volumeInfo']['authors'].try(:join, (', ')) %></h1>
+    <div class="book-title"><%= data['volumeInfo']['title'] %></div>
+    <h2><%= data['volumeInfo']['authors'].try(:join, (', ')) %></h2>
     <div class="description-box">
       <p>
         <%= data['volumeInfo']['description'] %>

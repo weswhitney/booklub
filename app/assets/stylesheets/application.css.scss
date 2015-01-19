@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-  background: image-url('catcher_in_the_rye.jpg');
+  background: image-url('library.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   padding-top: 54px;
@@ -102,4 +102,20 @@ h1 {
 .auth-links {
   float: right;
   margin: 20px;
+}
+
+a:hover{
+  text-decoration:none
+}
+
+.footer-icons {
+  margin-left: 25%;
+  margin-right: 25%;
+  padding: 40px;
+  text-align: center;
+}
+
+.book-title {
+  text: 1.5em;
+  font-size: 4em;
 }
