@@ -14,29 +14,31 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <div class="navigate-bar nav-fixed nav-border">
-      <% if current_user != nil %>
-      <div class="current-user">
-        <%= current_user.username %>
-      </div>
-      <% else %>
-      <%= link_to "Sign out of booklub", log_out_path, method: "delete" %>
-      NO USER LOGGED IN
-      <% end %>
+  <div class="navigate-bar nav-fixed nav-border">
+    <% if current_user != nil %>
+    <div id="bookclub-banner" class="sign">
+      booKlub
     </div>
-  <header class="nav-junior">
+    <span class="auth-links">
+    <%= current_user.username %>
+    </span>
+    <span class="sign-out"><%= link_to "Sign out of booklub", log_out_path, method: "delete" %></span>
+    <% else %>
     <span class="auth-links">
       <a href="/auth/twitter">connect with twitter</a>
       <a href="/auth/google_oauth2">connect with google</a>
     </span>
+    <% end %>
+  </div>
+  <header class="nav-junior">
   </header>
   <main>
     <div class="container">
 
-    <% if notice != nil %>
-    <h2><%= notice %></h2>
-    <% end %>
-    <%= yield %>
+      <% if notice != nil %>
+      <h2><%= notice %></h2>
+      <% end %>
+      <%= yield %>
 
     </div>
   </main>

@@ -99,10 +99,7 @@ h1 {
   text-size: 2em;
 }
 
-.column {
-  float: left;
-}
-
-.two.columns .column, .column-two {
-  width: 50%;
+.auth-links {
+  float: right;
+  margin: 20px;
 }
