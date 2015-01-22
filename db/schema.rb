@@ -1,4 +1,4 @@
-# encoding: UTF-8
+e# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150109225757) do
+ActiveRecord::Schema.define(version: 20150122003728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 20150109225757) do
   create_table "bookclub_users", force: true do |t|
     t.integer "user_id"
     t.integer "bookclub_id"
+    t.string  "role"
+    t.string  "status"
   end
 
   create_table "bookclubs", force: true do |t|
