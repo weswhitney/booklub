@@ -7,14 +7,13 @@ class AssignedBooksController < ApplicationController
 
   def create
     # if book exists in database
-    book_id_hash = params.require(:assigned_book).permit(:book_id)
-
+    book_id_hash = Book.where(title: params[:title])
 
     if book_id_hash.empty?
       # create a book with title, author, description
       book = Book.create!(
-        :title => params[:title],
-        :author => params[:author]
+      :title => params[:title],
+      :author => params[:author]
       )
       # populate book_id_hash with new book_id
       book_id_hash = {book_id: book.id}
