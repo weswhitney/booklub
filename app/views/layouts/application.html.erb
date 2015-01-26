@@ -11,16 +11,16 @@
   <title>booKlub</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <%= csrf_meta_tags %>
 </head>
+
 <body>
-  <div class="navigate-bar nav-fixed nav-border">
-    <div id="bookclub-banner" class="sign">
+  <div class="nav-bar nav">
       booKlub
-    </div>
     <% if current_user != nil %>
     <span class="auth-links">
-    <%= current_user.username %>
+      <%= current_user.username %>
     </span>
     <span class="sign-out"><%= link_to "Sign out of booklub", log_out_path, method: "delete" %></span>
     <% else %>
@@ -30,8 +30,7 @@
     </span>
     <% end %>
   </div>
-  <header class="nav-junior">
-  </header>
+
   <main>
     <div class="container">
 
@@ -42,6 +41,7 @@
 
     </div>
   </main>
+
   <footer>
     <div class="fatty-footer">
       <div class="footer-icons">
@@ -63,7 +63,6 @@
       </div>
     </div>
   </footer>
-
 
 </body>
 </html>

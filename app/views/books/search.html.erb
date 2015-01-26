@@ -20,7 +20,7 @@
 
     <%= form_tag bookclub_assigned_books_path do %>
       <%= hidden_field_tag :title, data['volumeInfo']['title'] %>
-      <%= hidden_field_tag :author, data['volumeInfo']['author'] %>
+      <%= hidden_field_tag :author, data['volumeInfo']['authors'] %>
       <%= submit_tag "Add as Assigned Reading", class: "search-field" %>
     <% end %>
   <% end %>

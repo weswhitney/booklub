@@ -10,7 +10,10 @@
   <thead>
     <tr>
       <th>
-        Title
+        Title:
+      </th>
+      <th>
+        Members:
       </th>
     </tr>
   </thead>
@@ -20,14 +23,19 @@
       <td>
         <%= assigned_book.book.title %>
       </td>
-    </tr>
     <% end %>
+      <td>
+        Guy Bookclubmember
+      </td>
+    </tr>
   </tbody>
 </table>
 
 <p>
 
 <%= link_to "Assign New Book to Bookclub", books_search_path(@bookclub) %>
+|
+<%= link_to "Assign New Member to Bookclub" %>
 |
 <%= link_to "Edit", edit_bookclub_path(@bookclub) %>
 |

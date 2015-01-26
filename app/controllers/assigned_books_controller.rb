@@ -17,7 +17,7 @@ class AssignedBooksController < ApplicationController
         :author => params[:author]
       )
       # populate book_id_hash with new book_id
-      book_id_hash = { book_id: book.id}
+      book_id_hash = {book_id: book.id}
     end
 
     @assigned_book = AssignedBook.new(book_id_hash)
