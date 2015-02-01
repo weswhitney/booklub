@@ -13,8 +13,8 @@
   <%= stylesheet_link_tag 'application' %>
   <%= csrf_meta_tags %>
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="jumbotron-narrow.css" rel="stylesheet">
 </head>
-
 
 <body>
 
@@ -23,37 +23,44 @@
       <nav>
         <ul class="nav nav-pills pull-right">
           <li role="presentation" class="active"><a href="#">Home</a></li>
-          <li role="presentation"><a href="#">About</a></li>
+          <% if current_user != nil %>
+          <%= current_user.username %>
+          <li role="presentation"><%= link_to "Sign out", log_out_path, method: "delete" %></li>
+          <% else %>
+          <% end %>
           <li role="presentation"><a href="#">Contact</a></li>
         </ul>
       </nav>
       <h3 class="text-muted">bookClub</h3>
     </div>
 
-
-    <div class="row marketing">
-      <div class="col-lg-6">
-        <h4>Subheading</h4>
-        <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-        <h4>Subheading</h4>
-        <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-        <h4>Subheading</h4>
-        <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+      <% if notice != nil %>
+      <div class="alert alert-success text-center">
+        <%= notice %>
       </div>
+      <% end %>
+      <%= yield %>
 
-      <div class="col-lg-6">
-        <h4>Subheading</h4>
-        <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
 
-        <h4>Subheading</h4>
-        <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+    <hr>
 
-        <h4>Subheading</h4>
-        <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-      </div>
-    </div>
+    <%= link_to "https://students.gschool.it/cohorts/3/students/95" do %>
+    <%= image_tag("gschool-logo_icon.png") %>
+    <% end %>
+    |
+    <%= link_to "http://www.linkedin.com/pub/wesley-whitney/a5/aa4/442/" do %>
+    <%= image_tag("linked_in_icon.png") %>
+    <% end %>
+    |
+    <%= link_to "https://github.com/weswhitney" do %>
+    <%= image_tag("GitHub-Mark_icon.png") %>
+    <% end %>
+    |
+    <%= link_to "https://twitter.com/wes_whitney" do %>
+    <%= image_tag("Twitter_logo_blue_icon.png") %>
+    <% end %>
+
+    <hr>
 
     <footer class="footer">
       <p>&copy; Company 2014</p>
@@ -61,57 +68,5 @@
 
   </div> <!-- /container -->
 
-<!--
-<body>
-  <div class="nav-bar nav">
-    <span class="booKlub">
-      booKlub
-    </span>
-    <% if current_user != nil %>
-    <span class="auth-links">
-      <%= current_user.username %>
-    </span>
-    <span class="sign-out"><%= link_to "Sign out of booklub", log_out_path, method: "delete" %></span>
-    <% else %>
-    <span class="auth-links">
-      <a href="/auth/twitter">connect with twitter</a>
-      <a href="/auth/google_oauth2">connect with google</a>
-    </span>
-    <% end %>
-  </div>
-
-  <main>
-    <div class="container">
-
-      <% if notice != nil %>
-      <h2><%= notice %></h2>
-      <% end %>
-      <%= yield %>
-
-    </div>
-  </main>
-
-  <footer>
-    <div class="fatty-footer">
-      <div class="footer-icons">
-        <%= link_to "https://students.gschool.it/cohorts/3/students/95" do %>
-        <%= image_tag("gschool-logo_icon.png") %>
-        <% end %>
-        |
-        <%= link_to "http://www.linkedin.com/pub/wesley-whitney/a5/aa4/442/" do %>
-        <%= image_tag("linked_in_icon.png") %>
-        <% end %>
-        |
-        <%= link_to "https://github.com/weswhitney" do %>
-        <%= image_tag("GitHub-Mark_icon.png") %>
-        <% end %>
-        |
-        <%= link_to "https://twitter.com/wes_whitney" do %>
-        <%= image_tag("Twitter_logo_blue_icon.png") %>
-        <% end %>
-      </div>
-    </div>
-  </footer>
- -->
 </body>
 </html>
