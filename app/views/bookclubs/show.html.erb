@@ -1,12 +1,6 @@
-<p>
-  show page
-</p>
+<h4><%= @bookclub.name %></h4>
 
-<p>
-  <%= @bookclub.name %>
-</p>
-
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>
@@ -32,13 +26,11 @@
 </table>
 
 <p>
-
 <%= link_to "Choose a new book for your Bookclub", books_search_path(@bookclub) %>
 |
-<%= link_to "Invite some friends", #bookclub_users#index %>
+<!-- <%#= link_to "Invite some friends", bookclub_users#index %> -->
 |
 <%= link_to "Edit", edit_bookclub_path(@bookclub) %>
 |
 <%= link_to "Delete", @bookclub, method: :delete %>
-
 </p>

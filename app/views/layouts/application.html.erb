@@ -13,7 +13,6 @@
   <%= stylesheet_link_tag 'application' %>
   <%= csrf_meta_tags %>
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="jumbotron-narrow.css" rel="stylesheet">
 </head>
 
 <body>
@@ -23,23 +22,25 @@
       <nav>
         <ul class="nav nav-pills pull-right">
           <li role="presentation" class="active"><a href="#">Home</a></li>
-          <% if current_user != nil %>
-          <%= current_user.username %>
           <li role="presentation"><%= link_to "Sign out", log_out_path, method: "delete" %></li>
-          <% else %>
-          <% end %>
           <li role="presentation"><a href="#">Contact</a></li>
         </ul>
       </nav>
-      <h3 class="text-muted">bookClub</h3>
+      <h3 class="text-muted">
+        bookClub
+        <% if current_user != nil %>
+        <%= current_user.username %>
+        <% else %>
+        <% end %>
+      </h3>
     </div>
 
-      <% if notice != nil %>
-      <div class="alert alert-success text-center">
-        <%= notice %>
-      </div>
-      <% end %>
-      <%= yield %>
+    <% if notice != nil %>
+    <div class="alert alert-success text-center">
+      <%= notice %>
+    </div>
+    <% end %>
+    <%= yield %>
 
 
     <hr>
@@ -60,10 +61,8 @@
     <%= image_tag("Twitter_logo_blue_icon.png") %>
     <% end %>
 
-    <hr>
-
     <footer class="footer">
-      <p>&copy; Company 2014</p>
+      <p>&copy; Wesley Whitney 2015</p>
     </footer>
 
   </div> <!-- /container -->
