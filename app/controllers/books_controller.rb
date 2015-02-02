@@ -34,6 +34,6 @@ class BooksController < ApplicationController
   end
 
   def show
-
+    
   end
 end

@@ -15,11 +15,11 @@
     <% @bookclub.assigned_books.each do |assigned_book| %>
     <tr>
       <td>
-        <%= assigned_book.book.title %>
+        <%= link_to assigned_book.book.title, book_show_path(assigned_book.book) %>
       </td>
     <% end %>
       <td>
-      <%= @bookclub.bookclub_users.count %>
+      <%= link_to pluralize(@bookclub.bookclub_users.count, "fellow readers"), bookclub_bookclub_users_path(@bookclub) %>
       </td>
     </tr>
   </tbody>
