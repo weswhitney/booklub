@@ -1,11 +1,23 @@
-hey wes you're awesome, welcome to your dashboard
+<h2>dashboard</h2>
 
 <!-- button to create new bookclub -->
 <%= link_to "Start a bookclub", new_bookclub_path %>
 <!-- list of books that link to bookclub show view -->
-<ul>
-  list of book clubs:
-  <% @bookclubs.each do |bookclub| %>
-  <li><%= link_to bookclub.name, bookclub_path(bookclub) %></li>
-  <% end %>
-</ul>
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>
+        bookclubs:
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @bookclubs.each do |bookclub| %>
+    <tr>
+      <td>
+        <%= link_to bookclub.name, bookclub_path(bookclub) %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

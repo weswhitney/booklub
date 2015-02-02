@@ -1,1 +1,26 @@
-Bookclub user page
+<h2>for bookclub: <%= @bookclub.name %></h2>
+
+<div class="well form-inline">
+  <%= form_for [@bookclub, @bookclub_user] do |f| %>
+
+  <div class="form-group">
+    <%= f.collection_select(
+    :user_id,
+    User.all,
+    :id,
+    :username,
+    {include_blank: "Please select a user..."},
+    {class: "form-control"}) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.select :role,
+    ["member", "owner"],
+    {include_blank: false},
+    {class: "form-control"} %>
+  </div>
+
+  <%= f.submit "Add Bookclub Member", class: "btn btn-primary" %>
+
+  <% end %>
+</div>

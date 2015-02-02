@@ -19,16 +19,16 @@
       </td>
     <% end %>
       <td>
-        Guy Bookclubmember
+      <%= @bookclub.bookclub_users.count %>
       </td>
     </tr>
   </tbody>
 </table>
 
 <p>
-<%= link_to "Choose a new book for your Bookclub", books_search_path(@bookclub) %>
+<%= link_to "Choose a book", books_search_path(@bookclub) %>
 |
-<!-- <%#= link_to "Invite some friends", bookclub_users#index %> -->
+<%= link_to "Invite some friends", bookclub_bookclub_users_path(@bookclub) %>
 |
 <%= link_to "Edit", edit_bookclub_path(@bookclub) %>
 |
