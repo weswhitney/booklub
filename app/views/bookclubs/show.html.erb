@@ -15,7 +15,7 @@
     <% @bookclub.assigned_books.each do |assigned_book| %>
     <tr>
       <td>
-        <%= link_to assigned_book.book.title, book_show_path(assigned_book.book) %>
+        <%= link_to assigned_book.book.title, bookclub_assigned_book_path(@bookclub, assigned_book) %>
       </td>
     <% end %>
       <td>

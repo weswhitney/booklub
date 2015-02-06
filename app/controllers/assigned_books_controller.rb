@@ -1,7 +1,10 @@
 class AssignedBooksController < ApplicationController
 
-  def new
+  before_action do
     @bookclub = Bookclub.find(params[:bookclub_id])
+  end
+
+  def new
     @assigned_book = AssignedBook.new
   end
 
@@ -13,7 +16,8 @@ class AssignedBooksController < ApplicationController
       # create a book with title, author, description
       book = Book.create!(
       :title => params[:title],
-      :author => params[:author]
+      :author => params[:author],
+      :cover => params[:cover]
       )
       # populate book_id_hash with new book_id
       book_id_hash = {book_id: book.id}
@@ -24,5 +28,9 @@ class AssignedBooksController < ApplicationController
     @assigned_book.save
 
     redirect_to bookclub_path(params[:bookclub_id])
+  end
+
+  def show
+    @assigned_book = @bookclub.assigned_books.find(params[:id])
   end
 end
