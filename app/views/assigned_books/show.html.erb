@@ -3,3 +3,30 @@
 <h2><%= @assigned_book.book.author %></h2>
 <br>
 <img src="<%= @assigned_book.book.cover %>"/>
+
+<% @assigned_book.discussions.all.each do |discussion| %>
+<div class="row">
+  <div class="col-md-3">
+    <% if discussion.bookclub_user_id %>
+    <%= discussion.bookclub_user.user.username %>
+    <% else %>
+    (deleted user)
+    <% end %>
+    <p class="text-muted"><%= time_ago_in_words(discussion.created_at) %></p>
+  </div>
+  <div class="col-md-9">
+    <%= discussion.discussion %>
+  </div>
+</div>
+<% end %>
+
+
+<div class="form-group row">
+  <div class="col-md-offset-3 col-md-9">
+    <%= form_for [@bookclub, @assigned_book, @discussion] do |f| %>
+    <%= f.text_area :discussion, class: "form-control" %>
+    <br>
+    <%= f.submit class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

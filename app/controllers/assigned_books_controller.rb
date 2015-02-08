@@ -32,5 +32,7 @@ class AssignedBooksController < ApplicationController
 
   def show
     @assigned_book = @bookclub.assigned_books.find(params[:id])
+    @discussion = @assigned_book.discussions.new
+    @discussions = @assigned_book.discussions.all
   end
 end
