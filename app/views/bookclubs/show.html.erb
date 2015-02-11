@@ -19,7 +19,11 @@
       </td>
     <% end %>
       <td>
-      <%= link_to pluralize(@bookclub.bookclub_users.count, "fellow readers"), bookclub_bookclub_users_path(@bookclub) %>
+        <% if @bookclub.bookclub_users.count > 0 %>
+      <%= link_to pluralize(@bookclub.bookclub_users.count, "fellow reader"), bookclub_bookclub_users_path(@bookclub) %>
+      <% else %>
+      <%= "no members added" %>
+      <% end %>
       </td>
     </tr>
   </tbody>
