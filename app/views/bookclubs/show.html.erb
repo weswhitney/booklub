@@ -1,13 +1,13 @@
-<h4><%= @bookclub.name %></h4>
+<h4>Book lub: <%= @bookclub.name %></h4>
 
 <table class="table">
   <thead>
     <tr>
       <th>
-        Title:
+        Book Title
       </th>
       <th>
-        Members:
+        Lub Members
       </th>
     </tr>
   </thead>
@@ -32,5 +32,5 @@
 |
 <%= link_to "Edit", edit_bookclub_path(@bookclub) %>
 |
-<%= link_to "Delete", @bookclub, method: :delete %>
+<%= link_to "Delete", @bookclub, method: :delete, data: {confirm: 'wait! fa real do?'} %>
 </p>

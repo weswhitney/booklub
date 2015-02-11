@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+  source 'https://rubygems.org'
 
 gem 'google-api-client'
 gem 'faraday', '~> 0.9.1'

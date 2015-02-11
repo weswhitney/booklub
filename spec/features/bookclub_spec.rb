@@ -13,16 +13,37 @@ feature 'bookclubs' do
 
   end
 
-  # scenario 'user can invite other users to join bookclubs' do
-  #
-  #   Bookclub.create!(
-  #   id: 15,
-  #   name: "awes book lub"
-  #   )
-  #
-  #   visit "bookclubs/15"
-  #   click_on "Invite some friends"
-  #   select('wes', from: 'Add Bookclub Member')
-  # end
+  scenario 'users can delete a bookclub' do
+
+    bookclub = Bookclub.create!(
+    name: "awes book lub"
+    )
+
+    visit bookclub_path(bookclub)
+    click_on "Delete"
+    expect(page).to have_no_content('awes book lub')
+
+  end
+
+  scenario 'user can invite other users to join bookclubs' do
+
+    bookclub = Bookclub.create!(
+    name: "awes book lub"
+    )
+    user = User.create!(username: "wes")
+
+    visit bookclub_path(bookclub)
+    click_on "Invite some friends"
+    select(user.username, from: 'bookclub_user_user_id')
+    click_on "Add Book lub Member"
+
+    expect(page).to have_content('book lub member successfully added')
+
+  end
+
+  scenario 'user can delete users from their bookclub' do
+
+    
+  end
 
 end
