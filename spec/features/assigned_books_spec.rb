@@ -5,6 +5,7 @@ feature 'assigned_books' do
 
  before do
    create_bookclub = Bookclub.new
+   create_user = AssignedBook.new
  end
 
   scenario 'a user can delete a book from the bookclub' do
