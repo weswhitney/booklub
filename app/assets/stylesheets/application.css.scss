@@ -80,3 +80,14 @@ body {
     border-bottom: 0;
   }
 }
+
+.btn-twitter {
+  background-color: #4099ff;
+  color: white;
+  &:hover {
+    background-color: darken(#4099ff, 5);
+    color: white;
+    // color: darken(#fff, 5);
+    }
+
+}
