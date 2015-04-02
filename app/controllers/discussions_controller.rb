@@ -6,7 +6,7 @@ class DiscussionsController < ApplicationController
   end
 
   def create
-    @discussion = @assigned_book.discussions.new(params.require(:discussion).permit(:discussion, :assigned_book_id, :booklub_user_id))
+    @discussion = @assigned_book.discussions.new(params.require(:discussion).permit(:discussion, :assigned_book_id, :bookclub_user_id))
     @discussion.bookclub_user_id = current_user.id
     if @discussion.save
       redirect_to bookclub_assigned_book_path(@bookclub, @assigned_book), notice: 'discussion saved'
