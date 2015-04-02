@@ -4,5 +4,6 @@ class Discussion < ActiveRecord::Base
 
   belongs_to :assigned_book
   belongs_to :bookclub_user
-  has_many :users, through: :bookclub_user
+  # belongs_to :users, through: :bookclub_user
+  belongs_to :user
 end
