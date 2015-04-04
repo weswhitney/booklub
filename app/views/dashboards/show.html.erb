@@ -1,11 +1,17 @@
 <!-- button to create new bookclub -->
 <button class="btn btn-default"><i class="fa fa-users"><%= link_to " Start a bookclub", new_bookclub_path %></i></button>
 <!-- list of books that link to bookclub show view -->
-<table class="table table-condensed">
+<table class="table table-condensed table-hover">
   <thead>
     <tr>
       <th>
-        bookclubs:
+        bookclubs
+      </th>
+      <th>
+        books
+      </th>
+      <th>
+        members
       </th>
     </tr>
   </thead>
@@ -14,6 +20,12 @@
     <tr>
       <td>
         <%= link_to bookclub.name, bookclub_path(bookclub) %>
+      </td>
+      <td>
+        <%= link_to bookclub.assigned_books.count, bookclub_path(bookclub) %>
+      </td>
+      <td>
+        <%= bookclub.bookclub_users.count %>
       </td>
     </tr>
     <% end %>
