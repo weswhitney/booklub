@@ -11,7 +11,7 @@ class BookclubUsersController < ApplicationController
   def create
     @bookclub_user = @bookclub.bookclub_users.new(bookclub_user_params)
     if @bookclub.save
-      redirect_to bookclub_path(@bookclub), notice: 'book lub member successfully added'
+      redirect_to bookclub_bookclub_users_path(@bookclub), notice: 'book lub member successfully added'
     else
       render :index
     end
