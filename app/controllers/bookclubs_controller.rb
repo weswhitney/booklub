@@ -10,8 +10,11 @@ class BookclubsController < ApplicationController
 
   def create
     @bookclub = Bookclub.new(params.require(:bookclub).permit(:name ))
-    @bookclub.save
+    if @bookclub.save
     redirect_to @bookclub, notice: 'Bookclub was successfully created'
+  else
+    render :new
+  end
   end
 
   def show
