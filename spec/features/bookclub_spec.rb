@@ -5,9 +5,9 @@ feature 'bookclubs' do
   scenario 'users can create a bookclub' do
 
     visit "/dashboards/id"
-    click_on "Start a bookclub"
-    fill_in "Name", with: "awes book lub"
-    click_on "Create Bookclub"
+    click_link 'Start a bookclub'
+    fill_in 'Name', with: "awes book lub"
+    click_on "start club"
 
     expect(page).to have_content("Bookclub was successfully created")
 
@@ -43,7 +43,7 @@ feature 'bookclubs' do
 
   scenario 'user can delete users from their bookclub' do
 
-    
+
   end
 
 end

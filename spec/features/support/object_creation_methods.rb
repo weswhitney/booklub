@@ -15,6 +15,12 @@ end
 def create_assigned_book
   @assigned_book = AssignedBook.create!(
   bookclub_id: @bookclub.id,
-  user_id: user.id
+  book_id: book.id
+  )
+end
+
+def create_book
+  @book = Book.create!(
+  title: 'stupid book'
   )
 end
