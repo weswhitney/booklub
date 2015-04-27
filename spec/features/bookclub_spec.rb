@@ -6,7 +6,7 @@ feature 'bookclubs' do
 
     visit "/dashboards/id"
     click_link 'Start a bookclub'
-    fill_in 'Name', with: "awes book lub"
+    fill_in 'bookclub name', with: "awes book lub"
     click_on "start club"
 
     expect(page).to have_content("Bookclub was successfully created")
