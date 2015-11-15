@@ -1,9 +1,25 @@
 edit page
 
+<% if @bookclub.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@bookclub.errors.count, "error") %> prohibited this article from being saved:</h2>
+    <ul>
+      <% @bookclub.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
 <%= form_for @bookclub do |f| %>
-
-<%= f.label :name %>
-<%= f.text_field :name %>
-
-<%= f.submit %>
+  <div class="form-inline">
+    <%= f.label :name, "bookclub name", class: "form-group" %>
+    <div class="form-group">
+      <%= f.text_field :name, :class => "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.submit "Update Bookclub", :class => "btn btn-default btn-sml" %>
+    </div>
+  </div>
 <% end %>
