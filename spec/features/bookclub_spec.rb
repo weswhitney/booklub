@@ -13,6 +13,21 @@ feature 'bookclubs' do
 
   end
 
+  scenario 'users can update a bookclub name' do
+
+    bookclub = Bookclub.create!(
+    name: "update bookclub"
+    )
+    visit bookclub_path(bookclub)
+    click_on "Edit"
+    expect(page).to have_content('edit page')
+
+    fill_in 'bookclub name', with: "hot club"
+    click_on 'Update Bookclub'
+    expect(page).to have_content('Bookclub was successfully updated')
+    expect(page).to have_content('hot club')
+  end
+
   scenario 'users can delete a bookclub' do
 
     bookclub = Bookclub.create!(
