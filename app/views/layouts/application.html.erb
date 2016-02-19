@@ -18,7 +18,6 @@
   <body>
 
     <div class="container">
-      <div class="header">
         <nav>
           <ul class="nav nav-pills pull-right">
             <!-- <li role="presentation" class="active"><a href="#">Home</a></li> -->
@@ -33,7 +32,6 @@
             <%= link_to current_user.username, dashboard_path(:id) %>
           <% end %>
         </h3>
-      </div>
 
       <% if notice != nil %>
         <div class="alert alert-success text-center">
@@ -61,10 +59,9 @@
           <%= image_tag("Twitter_logo_blue_icon.png") %>
           <% end %>
 
-          <p>&copy; Wesley Whitney 2015</p>
+          <p>&copy; Wesley Whitney 2015-2016</p>
         </div>
       </div>
-
     </div> <!-- /container -->
 
   </body>
